@@ -1,40 +1,44 @@
 # User and Home API
+
 This project implements a RESTful API for managing users and their homes using Node.js, Express, and Swagger for API documentation.
 
 ## Installation
+
 Before running the project, ensure you have Node.js and npm installed on your machine.
 
 ### Clone the repository:
 
-bash
+`git clone <repository_url>`
 
-git clone 
 Install dependencies:
 
-bash
+`cd UserHomeApi`
 
-cd project-folder
-npm install
+`npm install`
+
+
 ## Running the Server
+
 To start the server, run the following command:
 
-bash
+`npm run start`
 
-npm start
 The server will start running at http://localhost:3000.
 
 ## API Documentation
+
 API endpoints are documented using Swagger UI. You can access the Swagger documentation at:
 
-bash
-
 http://localhost:3000/api-docs/
+
 Swagger UI provides an interactive interface where you can:
 
 View all available endpoints
 Test each endpoint with different parameters
 See sample requests and responses
+
 ### Endpoints
+
 Users
 GET /users: Get all users.
 GET /users/{userId}: Get a single user by ID.
