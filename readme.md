@@ -38,7 +38,7 @@ Test each endpoint with different parameters
 See sample requests and responses
 
 ### Endpoints
-
+```
 Users
 GET /users: Get all users.
 GET /users/{userId}: Get a single user by ID.
@@ -120,3 +120,5 @@ Updates details of a home identified by homeId belonging to the user identified 
 DELETE /users/{userId}/homes/{homeId}:
 
 Deletes a home identified by homeId belonging to the user identified by userId.
+
+```
