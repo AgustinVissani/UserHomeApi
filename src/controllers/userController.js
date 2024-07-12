@@ -5,7 +5,24 @@ const Home = require('../models/homeModel');
 
 // Obtener todos los usuarios
 exports.getAllUsers = (req, res) => {
-    res.status(200).json(users);
+    let filteredUsers = users;
+
+    if (req.query.name) {
+        filteredUsers = filteredUsers.filter(user =>
+            user.name.toLowerCase().includes(req.query.name.toLowerCase())
+        );
+    }
+    if (req.query.email) {
+        filteredUsers = filteredUsers.filter(user =>
+            user.email.toLowerCase().includes(req.query.email.toLowerCase())
+        );
+    }
+
+    if (filteredUsers.length > 0) {
+        res.status(200).json(filteredUsers);
+    } else {
+        res.status(404).json({ message: 'No users found' });
+    }
 };
 
 // Obtener un usuario por ID

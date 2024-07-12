@@ -8,6 +8,15 @@ const router = express.Router();
 * /users:
 *   get:
 *     summary: Obtener todos los usuarios
+*     parameters:
+*       - name: name
+*         in: query
+*         schema:
+*           type: string
+*       - name: email
+*         in: query
+*         schema:
+*           type: string
 *     responses:
 *       200:
 *         description: Lista de usuarios
@@ -116,34 +125,24 @@ router.delete('/users/:userId', userController.deleteUser);
  *         required: true
  *         schema:
  *           type: string
- *  
- *     responses:
- *       200:
- *         description: Lista de viviendas
- *       404:
- *         description: Usuario no encontrado
- *   post:
- *     summary: Crear una vivienda para un usuario
- *     parameters:
- *       - name: userId
- *         in: path
- *         required: true
+ *       - name: city
+ *         in: query
  *         schema:
  *           type: string
- *     requestBody:
- *       required: true
- *       content:
-*         application/json:
-*           example:
-*             city: ""
-*             street: ""
-*             country: ""
-*     responses:
-*       201:
-*         description: Vivienda creada
-*       404:
-*         description: Usuario no encontrado
-*/
+ *       - name: street
+ *         in: query
+ *         schema:
+ *           type: string
+ *       - name: country
+ *         in: query
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Lista de viviendas
+ *       '404':
+ *         description: Usuario no encontrado
+ */
 router.get('/users/:userId/homes', userController.getUserHomes);
 router.post('/users/:userId/homes', userController.createHomeForUser);
 

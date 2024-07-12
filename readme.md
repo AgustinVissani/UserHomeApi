@@ -121,6 +121,13 @@ DELETE /users/{userId}/homes/{homeId}:
 
 Deletes a home identified by homeId belonging to the user identified by userId.
 
+Name and email filters added to the enpoint 
+GET /users get all users.
+
+Additionally, a filter was added to the GET /users{userId}/homes enpoint
+
+Where it allows us to filter by user and the name of their address, be it city, street or country.
+
 Using only PUT to host updates simplifies the update logic on the server as there is no need to handle partial updates.
 All fields in the resource are updated at once, which can reduce complexity and potential errors in deployment.
 PATCH is useful for minor and frequent updates, as it allows only parts of the resource to be modified,
