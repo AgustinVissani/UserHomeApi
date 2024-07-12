@@ -121,7 +121,10 @@ DELETE /users/{userId}/homes/{homeId}:
 
 Deletes a home identified by homeId belonging to the user identified by userId.
 
-Using only PUT to host updates simplifies the update logic on the server as there is no need to handle partial updates. All fields in the resource are updated at once, which can reduce complexity and potential errors in deployment.
- PATCH is useful for minor and frequent updates, as it allows only parts of the resource to be modified, which can be more efficient and flexible. But in this case the addresses of the homes do not undergo constant modifications. That is why it was considered to perform a PUT of the houses and not a PATCH.
+Using only PUT to host updates simplifies the update logic on the server as there is no need to handle partial updates.
+All fields in the resource are updated at once, which can reduce complexity and potential errors in deployment.
+PATCH is useful for minor and frequent updates, as it allows only parts of the resource to be modified,
+which can be more efficient and flexible. But in this case the addresses of the homes do not undergo constant modifications.
+That is why it was considered to perform a PUT of the houses and not a PATCH.
 
 ```
